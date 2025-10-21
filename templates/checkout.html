@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Abu Marketplace</title>
+    <link rel="stylesheet" href="../css/marketplace.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        </header>
+
+    <div class="main-content-wrapper checkout-page">
+        <h1>Checkout</h1>
+
+        <div class="checkout-stepper">
+            <div class="step active completed">
+                <span class="step-circle"><i class="fas fa-check"></i></span>
+                <span class="step-label">1. Shipping</span>
+            </div>
+            <div class="step active">
+                <span class="step-circle">2</span>
+                <span class="step-label">Payment</span>
+            </div>
+            <div class="step">
+                <span class="step-circle">3</span>
+                <span class="step-label">Review</span>
+            </div>
+        </div>
+
+        <div class="checkout-layout">
+            <div class="checkout-form-area">
+                <h2>Payment Information</h2>
+                
+                <div class="payment-methods">
+                    <label class="radio-card active-payment">
+                        <input type="radio" name="payment-method" checked>
+                        <i class="fas fa-credit-card blue-icon"></i> Credit/Debit Card
+                    </label>
+                    <label class="radio-card">
+                        <input type="radio" name="payment-method">
+                        <i class="fab fa-paypal blue-icon"></i> PayPal
+                    </label>
+                    <label class="radio-card">
+                        <input type="radio" name="payment-method">
+                        <i class="fas fa-money-bill-wave blue-icon"></i> Cash on Delivery
+                    </label>
+                </div>
+
+                <form class="card-details-form">
+                    <label for="card-name">Name on Card</label>
+                    <input type="text" id="card-name" placeholder="John Doe">
+                    
+                    <label for="card-number">Card Number</label>
+                    <input type="text" id="card-number" placeholder="XXXX XXXX XXXX XXXX">
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="expiry">Expiry Date</label>
+                            <input type="text" id="expiry" placeholder="MM/YY">
+                        </div>
+                        <div class="form-group">
+                            <label for="cvv">CVV</label>
+                            <input type="text" id="cvv" placeholder="123">
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn-next-step">
+                        Continue to Review <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <a href="#" class="btn-back-step"><i class="fas fa-arrow-left"></i> Back to Shipping</a>
+                </form>
+
+            </div>
+
+            <div class="checkout-summary">
+                <h2>Your Order</h2>
+                
+                <div class="summary-item-list">
+                    <div class="summary-item">
+                        <span class="item-name">Wireless Earbuds x1</span>
+                        <span class="item-price">$99.99</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="item-name">T-Shirt x2</span>
+                        <span class="item-price">$40.00</span>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="summary-totals">
+                    <div class="summary-line">
+                        <span>Subtotal</span>
+                        <span>$139.99</span>
+                    </div>
+                    <div class="summary-line">
+                        <span>Shipping</span>
+                        <span>$10.00</span>
+                    </div>
+                    <div class="summary-line total-final">
+                        <span>Total Due</span>
+                        <span class="total-value">$149.99</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>About Abu Marketplace</h4>
+                <a href="#">Our Story</a>
+                <a href="#">Careers</a>
+                <a href="#">Press</a>
+                <a href="#">Terms & Conditions</a>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Customer Service</h4>
+                <a href="#">Help Center</a>
+                <a href="#">Returns & Refunds</a>
+                <a href="#">Shipping Info</a>
+                <a href="#">Contact Us</a>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Connect</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+                <p class="newsletter-text">Subscribe to our newsletter:</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Your email...">
+                    <button class="btn-subscribe"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Abu Marketplace. All rights reserved.</p>
+        </div>
+    </footer>
+    
+</body>
+</html>
+</body>
+</html>

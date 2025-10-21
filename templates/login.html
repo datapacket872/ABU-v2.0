@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ABU Marketplace — Login</title>
+  <link rel="stylesheet" href="../css/login.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script defer src="/static/js/interactive-login.js"></script>
+</head>
+<body>
+  <main class="page">
+    <section class="card">
+      <!-- LEFT: form -->
+      <aside class="card__left" aria-labelledby="signin-title">
+        <header class="brand">
+          <div class="brand__logo" aria-hidden="true"></div>
+          <div class="brand__name">ABU Marketplace</div>
+        </header>
+
+        <div class="auth">
+          <h1 id="signin-title" class="auth__title">Log in to your account</h1>
+          <p class="auth__sub">Enter your details to access the dashboard</p>
+
+          <button class="btn btn--outline btn--full" aria-label="Continue with Google">
+            <span class="btn__icon">G</span>
+            Continue with Google
+          </button>
+
+          <div class="divider" role="separator"><span>or</span></div>
+
+          <form id="loginForm" class="form" id="loginForm" action="#" method="post" novalidate>
+            <label class="label" for="email">Email</label>
+            <input id="email" name="email" type="email" inputmode="email" placeholder="hello@domain.com" required autocomplete="username">
+
+            <div class="field-row">
+              <div class="field-col">
+                <label class="label" for="password">Password</label>
+                <div class="pwd-wrap">
+                  <input id="password" name="password" type="password" placeholder="Your password" required autocomplete="current-password">
+                  <button type="button" class="pwd-toggle" aria-label="Toggle password visibility">👁</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-meta">
+              <label class="checkbox">
+                <input type="checkbox" name="remember" checked>
+                <span>Remember me</span>
+              </label>
+              <a class="link-small" href="#">Forgot password?</a>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--full" id="submitBtn">
+              <span class="btn-text">Log in</span>
+            </button>
+          </form>
+
+          <p class="signup">Don’t have an account? <a href="#">Sign up</a></p>
+        </div>
+
+        <footer class="legal">
+          <small>© 2025 ABU Marketplace</small>
+        </footer>
+      </aside>
+
+      <!-- RIGHT: promo / illustration -->
+      <aside class="card__right">
+        <div class="promo">
+          <div class="promo__content">
+            <h2 class="promo__title">ABU Marketplace</h2>
+            <p class="promo__lead">Shop smart. Sell faster. Connect locally.</p>
+            <a class="btn btn--ghost" href="#">Learn more</a>
+          </div>
+
+          <figure class="promo__art" aria-hidden="true">
+            <img src="/mnt/data/6003474526249273253.jpg" alt="" loading="eager">
+          </figure>
+        </div>
+      </aside>
+    </section>
+  </main>
+</body>
+</html>
