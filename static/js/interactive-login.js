@@ -51,23 +51,47 @@
   function setFieldInvalid(input, message){
     if(!input) return;
     input.setAttribute('aria-invalid', 'true');
-    let msg = input.nextElementSibling && input.nextElementSibling.classList && input.nextElementSibling.classList.contains('field-error')
-      ? input.nextElementSibling
-      : null;
-    if(!msg){
-      msg = document.createElement('div');
-      msg.className = 'field-error';
-      input.parentNode.insertBefore(msg, input.nextSibling);
+    const isInPwdWrap = !!input.closest('.pwd-wrap');
+    let msg;
+    if(isInPwdWrap){
+      // Place error after the wrapper to avoid interfering with the toggle button
+      const wrap = input.closest('.pwd-wrap');
+      const afterWrap = wrap && wrap.nextElementSibling;
+      if(afterWrap && afterWrap.classList && afterWrap.classList.contains('field-error')){
+        msg = afterWrap;
+      } else {
+        msg = document.createElement('div');
+        msg.className = 'field-error';
+        if(wrap && wrap.parentNode){
+          wrap.parentNode.insertBefore(msg, wrap.nextSibling);
+        }
+      }
+    } else {
+      msg = input.nextElementSibling && input.nextElementSibling.classList && input.nextElementSibling.classList.contains('field-error')
+        ? input.nextElementSibling
+        : null;
+      if(!msg){
+        msg = document.createElement('div');
+        msg.className = 'field-error';
+        input.parentNode.insertBefore(msg, input.nextSibling);
+      }
     }
-    msg.textContent = message;
+    if(msg) msg.textContent = message;
   }
 
   function clearFieldInvalid(input){
     if(!input) return;
     input.removeAttribute('aria-invalid');
-    const msg = input.nextElementSibling && input.nextElementSibling.classList && input.nextElementSibling.classList.contains('field-error')
-      ? input.nextElementSibling
-      : null;
+    const wrap = input.closest('.pwd-wrap');
+    let msg = null;
+    if(wrap){
+      const afterWrap = wrap.nextElementSibling;
+      if(afterWrap && afterWrap.classList && afterWrap.classList.contains('field-error')){
+        msg = afterWrap;
+      }
+    } else if(input.nextElementSibling && input.nextElementSibling.classList && input.nextElementSibling.classList.contains('field-error')){
+      msg = input.nextElementSibling;
+    }
     if(msg){
       msg.textContent = '';
     }
