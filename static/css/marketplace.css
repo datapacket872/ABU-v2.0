@@ -1795,3 +1795,92 @@ input:checked + .slider:before {
     font-size: 14px;
     color: rgba(255, 255, 255, 0.7);
 }
+
+/* ======================================= */
+/* 13. ACCESSIBILITY & INTERACTION ENHANCEMENTS */
+/* ======================================= */
+
+:where(a, button, input, select, textarea, [role="button"])::selection {
+  background: rgba(65, 105, 225, 0.25);
+}
+
+:where(a, button, input, select, textarea, [role="button"]):focus-visible {
+  outline: 3px solid var(--royal-blue);
+  outline-offset: 2px;
+}
+
+:where(.btn-primary, .btn-checkout, .btn-next-step):focus-visible {
+  outline-color: var(--bluish-pink);
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-link:focus {
+  position: fixed;
+  left: 20px;
+  top: 20px;
+  width: auto;
+  height: auto;
+  background: var(--royal-blue);
+  color: var(--white);
+  padding: 10px 14px;
+  border-radius: 6px;
+  z-index: 1000;
+}
+
+/* Toast notifications */
+.toast {
+  position: fixed;
+  right: 16px;
+  top: 16px;
+  background: var(--royal-blue);
+  color: var(--white);
+  padding: 10px 14px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 1200;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ======================================= */
+/* 14. RESPONSIVE REFINEMENTS */
+/* ======================================= */
+
+@media (max-width: 992px) {
+  .main-content-wrapper {
+    padding: 0 20px;
+    gap: 16px;
+  }
+  .search-bar { width: 300px; }
+  .product-detail-container { flex-direction: column; }
+}
+
+@media (max-width: 768px) {
+  .main-header { padding: 12px 20px; }
+  .search-bar { width: 100%; }
+  .header-left { gap: 10px; }
+}
+
+@media (max-width: 600px) {
+  .main-content-wrapper { flex-direction: column; }
+  .sidebar { width: 100%; order: 2; }
+  .product-grid-area { order: 1; }
+  .product-grid { grid-template-columns: 1fr; }
+  .footer-column { width: 100%; }
+}

@@ -9,28 +9,29 @@
     <script defer src="/static/js/products.js"></script>
 </head>
 <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
 
     <header class="main-header">
         <div class="header-left">
-            <a href="#" class="logo">Abu Marketplace</a>
+            <a href="/index.html" class="logo">Abu Marketplace</a>
             <nav class="main-nav">
-                <a href="#">Home</a>
+                <a href="/index.html">Home</a>
                 <a href="#">Categories</a>
-                <a href="#">Sell</a>
+                <a href="/sell-product.html">Sell</a>
             </nav>
         </div>
         
         <div class="header-center">
             <div class="search-bar">
-                <input type="text" placeholder="Search products...">
-                <button><i class="fas fa-search"></i></button>
+                <input type="text" placeholder="Search products..." aria-label="Search products">
+                <button aria-label="Search"><i class="fas fa-search"></i></button>
             </div>
         </div>
 
         <div class="header-right">
             <div class="user-actions">
                 <a href="#" class="action-icon"><i class="fas fa-heart"></i></a> <a href="#" class="action-icon cart"><i class="fas fa-shopping-cart"></i><span class="cart-count">3</span></a>
-                <a href="#" class="user-profile"><i class="fas fa-user-circle"></i></a>
+                <a href="/login.html" class="user-profile"><i class="fas fa-user-circle"></i></a>
             </div>
         </div>
     </header>
@@ -56,7 +57,7 @@
             <button class="apply-filters-btn">Apply Filters</button>
         </aside>
 
-        <main class="product-grid-area">
+        <main id="main" class="product-grid-area" aria-live="polite">
             <h2>Featured Products</h2>
             <div class="product-grid">
                 <div class="placeholder-card">Product Card 1</div>
